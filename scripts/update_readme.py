@@ -51,6 +51,13 @@ CATEGORY_ORDER = [
 ]
 
 
+class HttpError(Exception):
+    def __init__(self, code: int, body: str):
+        super().__init__(f"HTTP {code}: {body[:300]}")
+        self.code = code
+        self.body = body
+
+
 def http_json(url: str, *, method: str = "GET", body: dict | None = None,
               extra_headers: dict | None = None) -> dict | list:
     headers = {
@@ -67,8 +74,9 @@ def http_json(url: str, *, method: str = "GET", body: dict | None = None,
         with urllib.request.urlopen(req, timeout=30) as resp:
             return json.loads(resp.read().decode())
     except urllib.error.HTTPError as e:
-        print(f"HTTP {e.code} on {url}: {e.read().decode()[:500]}", file=sys.stderr)
-        raise
+        err_body = e.read().decode(errors="replace")
+        print(f"HTTP {e.code} on {url}: {err_body[:500]}", file=sys.stderr)
+        raise HttpError(e.code, err_body) from e
 
 
 def list_public_repos() -> list[dict]:
@@ -92,7 +100,7 @@ def recent_commits(repo: str, since_iso: str) -> list[dict]:
         data = http_json(
             f"{GH_API}/repos/{ORG}/{repo}/commits?since={since_iso}&per_page=20"
         )
-    except urllib.error.HTTPError:
+    except HttpError:
         return []
     return data if isinstance(data, list) else []
 
@@ -210,8 +218,27 @@ def main() -> int:
     print(f"Found {len(repos)} public repos.", file=sys.stderr)
 
     readme = replace_region(readme, "PROJECTS", render_projects(repos))
-    readme = replace_region(readme, "ABOUT", refresh_about(repos))
-    readme = replace_region(readme, "HIGHLIGHTS", refresh_highlights(repos))
+
+    # AI-driven regions degrade gracefully if GitHub Models is not enabled
+    # (403) or the token lacks the `models: read` scope (401/404).
+    def _try_ai(name: str, fn) -> None:
+        nonlocal readme
+        try:
+            readme = replace_region(readme, name, fn(repos))
+            print(f"AI region {name} refreshed.", file=sys.stderr)
+        except HttpError as exc:
+            if exc.code in (401, 403, 404):
+                print(
+                    f"Skipping AI region {name}: Models API returned {exc.code}. "
+                    "Enable GitHub Models for the org or grant `models: read`.",
+                    file=sys.stderr,
+                )
+            else:
+                raise
+
+    _try_ai("ABOUT", refresh_about)
+    _try_ai("HIGHLIGHTS", refresh_highlights)
+
     stamp = datetime.now(timezone.utc).strftime("Last refreshed %Y-%m-%d %H:%M UTC.")
     readme = replace_region(readme, "UPDATED", stamp)
 
