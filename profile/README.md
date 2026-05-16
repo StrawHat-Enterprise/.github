@@ -17,6 +17,7 @@
 
 ## About
 
+<!-- ABOUT:START -->
 StrawHat-Enterprise builds and maintains a portfolio of **production-grade platform components** for teams running on Microsoft Azure and Kubernetes. Our focus areas are:
 
 - **Self-hosted CI/CD runner platforms** on AKS (ARC, GitOps, image baking)
@@ -25,11 +26,13 @@ StrawHat-Enterprise builds and maintains a portfolio of **production-grade platf
 - **Operational automation** — certificate lifecycles, fleet observability, and runner orchestration
 
 Every public repository here is designed to be modular, opinionated, and ready to drop into a real environment.
+<!-- ABOUT:END -->
 
 ---
 
 ## Featured Projects
 
+<!-- PROJECTS:START -->
 ### Self-Hosted Runner Platform
 
 | Repository | Description | Stack |
@@ -56,6 +59,15 @@ Every public repository here is designed to be modular, opinionated, and ready t
 | Repository | Description | Stack |
 | --- | --- | --- |
 | [`cert-automation`](https://github.com/StrawHat-Enterprise/cert-automation) | Automated certificate issuance, renewal, and distribution workflows. | Python |
+<!-- PROJECTS:END -->
+
+---
+
+## Recent Highlights
+
+<!-- HIGHLIGHTS:START -->
+_Auto-generated weekly from recent activity across the org._
+<!-- HIGHLIGHTS:END -->
 
 ---
 
@@ -96,6 +108,7 @@ Unless otherwise specified within a repository, projects are released under the 
 
 <div align="center">
 
-<sub>Maintained by the StrawHat-Enterprise platform crew.</sub>
+<sub>Maintained by the StrawHat-Enterprise platform crew.</sub><br/>
+<sub><!-- UPDATED:START -->Last refreshed manually.<!-- UPDATED:END --></sub>
 
 </div>
