@@ -1,66 +1,101 @@
 <div align="center">
 
-# ⚓ StrawHat-Enterprise
+# StrawHat-Enterprise
 
-### *Cloud and platform repos & automations — setting sail across Azure seas.*
+**Cloud platform engineering, Azure infrastructure, and developer experience — open-sourced.**
 
-![Azure](https://img.shields.io/badge/Cloud-Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
-![DevOps](https://img.shields.io/badge/DevOps-Infra-2088FF?style=for-the-badge&logo=azuredevops&logoColor=white)
-![Terraform](https://img.shields.io/badge/IaC-Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
-![Bicep](https://img.shields.io/badge/IaC-Bicep-1BA1E2?style=for-the-badge&logo=microsoft&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
+[![Azure](https://img.shields.io/badge/Cloud-Microsoft%20Azure-0078D4?logo=microsoftazure&logoColor=white)](https://azure.microsoft.com)
+[![Terraform](https://img.shields.io/badge/IaC-Terraform-7B42BC?logo=terraform&logoColor=white)](https://www.terraform.io)
+[![Kubernetes](https://img.shields.io/badge/Orchestration-Kubernetes-326CE5?logo=kubernetes&logoColor=white)](https://kubernetes.io)
+[![Helm](https://img.shields.io/badge/Packaging-Helm-0F1689?logo=helm&logoColor=white)](https://helm.sh)
+[![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?logo=githubactions&logoColor=white)](https://github.com/features/actions)
+[![Backstage](https://img.shields.io/badge/IDP-Backstage-9BF0E1?logo=backstage&logoColor=black)](https://backstage.io)
 
 </div>
 
 ---
 
-## 🏴‍☠️ About Us
+## About
 
-**StrawHat-Enterprise** is a crew of cloud and platform engineers building open, reusable infrastructure, automation, and tooling — primarily on **Microsoft Azure**. Our repos cover everything from Infrastructure-as-Code modules to CI/CD pipelines, deployment accelerators, and operational scripts.
+StrawHat-Enterprise builds and maintains a portfolio of **production-grade platform components** for teams running on Microsoft Azure and Kubernetes. Our focus areas are:
 
-> *One Piece of infrastructure at a time.* 🍖
+- **Self-hosted CI/CD runner platforms** on AKS (ARC, GitOps, image baking)
+- **Reusable Infrastructure-as-Code** modules and catalogs (Terraform / Bicep)
+- **Internal Developer Platform** tooling powered by Backstage
+- **Operational automation** — certificate lifecycles, fleet observability, and runner orchestration
 
----
-
-## 🧭 What You'll Find Here
-
-| Area | Description |
-| --- | --- |
-| ☁️ **Cloud (Azure)** | Reference architectures, landing zones, and resource templates. |
-| 🛠️ **IaC** | Reusable Terraform, Bicep, and ARM modules. |
-| 🤖 **Automation** | Scripts, GitHub Actions workflows, and platform tooling. |
-| 🔧 **DevOps** | CI/CD pipelines, release patterns, and ops runbooks. |
-| 📦 **Platform** | Shared libraries, conventions, and golden-path templates. |
+Every public repository here is designed to be modular, opinionated, and ready to drop into a real environment.
 
 ---
 
-## 🚀 Getting Started
+## Featured Projects
 
-1. Browse the [repositories](https://github.com/orgs/StrawHat-Enterprise/repositories) tab above.
-2. Check each repo's `README.md` for setup and usage instructions.
-3. Star ⭐ the ones you find useful — it helps others discover them.
+### Self-Hosted Runner Platform
+
+| Repository | Description | Stack |
+| --- | --- | --- |
+| [`actions-runner-helm`](https://github.com/StrawHat-Enterprise/actions-runner-helm) | Helm charts for GitHub Actions self-hosted runners on Kubernetes — integrates **ARC**, **External Secrets Operator**, and **cert-manager**. | Go · Helm · K8s |
+| [`actions-runner-gitops`](https://github.com/StrawHat-Enterprise/actions-runner-gitops) | GitOps source-of-truth for runner fleets deployed to AKS. | Argo CD · Helm |
+
+### Infrastructure as Code
+
+| Repository | Description | Stack |
+| --- | --- | --- |
+| [`Azure-Catalog`](https://github.com/StrawHat-Enterprise/Azure-Catalog) | Curated catalog of reusable Terraform modules for common Azure landing-zone and workload patterns. | Terraform · Azure |
+| [`InfraCreator`](https://github.com/StrawHat-Enterprise/InfraCreator) | Composable infrastructure scaffolding to bootstrap new Azure environments quickly. | Terraform |
+
+### Developer Platform (Backstage)
+
+| Repository | Description | Stack |
+| --- | --- | --- |
+| [`backstage-app`](https://github.com/StrawHat-Enterprise/backstage-app) | Backstage portal — software catalog, TechDocs, and golden-path templates. | TypeScript · Backstage |
+| [`Backstage-helm`](https://github.com/StrawHat-Enterprise/Backstage-helm) | Helm chart to deploy Backstage on Kubernetes with sane defaults. | Helm |
+
+### Automation
+
+| Repository | Description | Stack |
+| --- | --- | --- |
+| [`cert-automation`](https://github.com/StrawHat-Enterprise/cert-automation) | Automated certificate issuance, renewal, and distribution workflows. | Python |
 
 ---
 
-## 🤝 Contributing
+## Engineering Principles
 
-We welcome contributions from the community.
-
-- Fork the repo you want to improve
-- Create a feature branch (`feat/your-change`)
-- Open a Pull Request with a clear description
-- Follow each repo's contribution guidelines and code of conduct
+- **Modular by default** — small, composable units over monoliths.
+- **GitOps everywhere** — declarative state, reviewed via pull requests.
+- **Secure supply chain** — pinned versions, signed artifacts, secrets via ESO / Key Vault.
+- **Operate what you ship** — every component ships with observability and runbooks.
+- **Documentation as a feature** — if it isn't documented, it isn't done.
 
 ---
 
-## 📜 License
+## Getting Started
 
-Unless stated otherwise in an individual repository, our projects are released under the **MIT License**.
+1. Explore the [repository list](https://github.com/orgs/StrawHat-Enterprise/repositories) to find a project that fits your use case.
+2. Each repo includes its own `README.md` with prerequisites, deployment steps, and configuration reference.
+3. Open an issue or discussion if you hit a snag — feedback shapes the roadmap.
+
+---
+
+## Contributing
+
+Contributions are welcome across all public repositories.
+
+- Fork the repository and create a feature branch (`feat/<scope>`).
+- Keep PRs focused and include tests or validation where applicable.
+- Follow the repository's `CONTRIBUTING.md` and code of conduct.
+- Sign your commits where required.
+
+---
+
+## License
+
+Unless otherwise specified within a repository, projects are released under the **MIT License**.
 
 ---
 
 <div align="center">
 
-*Crafted with ⚓ by the StrawHat-Enterprise crew.*
+<sub>Maintained by the StrawHat-Enterprise platform crew.</sub>
 
 </div>
