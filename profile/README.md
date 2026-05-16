@@ -35,30 +35,30 @@ Every public repository here is designed to be modular, opinionated, and ready t
 <!-- PROJECTS:START -->
 ### Self-Hosted Runner Platform
 
-| Repository | Description | Stack |
+| Repository | Description | Language |
 | --- | --- | --- |
-| [`actions-runner-helm`](https://github.com/StrawHat-Enterprise/actions-runner-helm) | Helm charts for GitHub Actions self-hosted runners on Kubernetes — integrates **ARC**, **External Secrets Operator**, and **cert-manager**. | Go · Helm · K8s |
-| [`actions-runner-gitops`](https://github.com/StrawHat-Enterprise/actions-runner-gitops) | GitOps source-of-truth for runner fleets deployed to AKS. | Argo CD · Helm |
+| [`actions-runner-gitops`](https://github.com/StrawHat-Enterprise/actions-runner-gitops) | GitOps repository for GitHub Actions self-hosted runners on AKS | — |
+| [`actions-runner-helm`](https://github.com/StrawHat-Enterprise/actions-runner-helm) | Helm charts for GitHub Actions self-hosted runners on Kubernetes (ARC + ESO + cert-manager) | Go |
 
 ### Infrastructure as Code
 
-| Repository | Description | Stack |
+| Repository | Description | Language |
 | --- | --- | --- |
-| [`Azure-Catalog`](https://github.com/StrawHat-Enterprise/Azure-Catalog) | Curated catalog of reusable Terraform modules for common Azure landing-zone and workload patterns. | Terraform · Azure |
-| [`InfraCreator`](https://github.com/StrawHat-Enterprise/InfraCreator) | Composable infrastructure scaffolding to bootstrap new Azure environments quickly. | Terraform |
+| [`Azure-Catalog`](https://github.com/StrawHat-Enterprise/Azure-Catalog) | _No description provided._ | HCL |
+| [`InfraCreator`](https://github.com/StrawHat-Enterprise/InfraCreator) | _No description provided._ | HCL |
 
 ### Developer Platform (Backstage)
 
-| Repository | Description | Stack |
+| Repository | Description | Language |
 | --- | --- | --- |
-| [`backstage-app`](https://github.com/StrawHat-Enterprise/backstage-app) | Backstage portal — software catalog, TechDocs, and golden-path templates. | TypeScript · Backstage |
-| [`Backstage-helm`](https://github.com/StrawHat-Enterprise/Backstage-helm) | Helm chart to deploy Backstage on Kubernetes with sane defaults. | Helm |
+| [`backstage-app`](https://github.com/StrawHat-Enterprise/backstage-app) | _No description provided._ | TypeScript |
+| [`Backstage-helm`](https://github.com/StrawHat-Enterprise/Backstage-helm) | _No description provided._ | Smarty |
 
 ### Automation
 
-| Repository | Description | Stack |
+| Repository | Description | Language |
 | --- | --- | --- |
-| [`cert-automation`](https://github.com/StrawHat-Enterprise/cert-automation) | Automated certificate issuance, renewal, and distribution workflows. | Python |
+| [`cert-automation`](https://github.com/StrawHat-Enterprise/cert-automation) | _No description provided._ | Python |
 <!-- PROJECTS:END -->
 
 ---
@@ -109,6 +109,8 @@ Unless otherwise specified within a repository, projects are released under the 
 <div align="center">
 
 <sub>Maintained by the StrawHat-Enterprise platform crew.</sub><br/>
-<sub><!-- UPDATED:START -->Last refreshed manually.<!-- UPDATED:END --></sub>
+<sub><!-- UPDATED:START -->
+Last refreshed 2026-05-16 14:43 UTC.
+<!-- UPDATED:END --></sub>
 
 </div>
