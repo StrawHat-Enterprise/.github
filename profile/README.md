@@ -59,6 +59,12 @@ Every public repository here is designed to be modular, opinionated, and ready t
 | Repository | Description | Language |
 | --- | --- | --- |
 | [`cert-automation`](https://github.com/StrawHat-Enterprise/cert-automation) | _No description provided._ | Python |
+
+### Other
+
+| Repository | Description | Language |
+| --- | --- | --- |
+| [`arc-runner-test`](https://github.com/StrawHat-Enterprise/arc-runner-test) | Test repo for AKS self-hosted runners | — |
 <!-- PROJECTS:END -->
 
 ---
@@ -110,7 +116,7 @@ Unless otherwise specified within a repository, projects are released under the 
 
 <sub>Maintained by the StrawHat-Enterprise platform crew.</sub><br/>
 <sub><!-- UPDATED:START -->
-Last refreshed 2026-05-18 12:40 UTC.
+Last refreshed 2026-05-25 12:38 UTC.
 <!-- UPDATED:END --></sub>
 
 </div>
