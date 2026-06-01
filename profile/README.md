@@ -72,7 +72,7 @@ Every public repository here is designed to be modular, opinionated, and ready t
 ## Recent Highlights
 
 <!-- HIGHLIGHTS:START -->
-_Auto-generated weekly from recent activity across the org._
+_No notable activity in the last week._
 <!-- HIGHLIGHTS:END -->
 
 ---
@@ -116,7 +116,7 @@ Unless otherwise specified within a repository, projects are released under the 
 
 <sub>Maintained by the StrawHat-Enterprise platform crew.</sub><br/>
 <sub><!-- UPDATED:START -->
-Last refreshed 2026-05-25 12:38 UTC.
+Last refreshed 2026-06-01 15:29 UTC.
 <!-- UPDATED:END --></sub>
 
 </div>
